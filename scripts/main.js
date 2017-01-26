@@ -3,19 +3,19 @@ var sortAnimation = (function () {
 
   var numberList = [];
 
-	var numberField = $('#input-number');
+  var numberField = $('#input-number');
   var addButton = $('#input-add');
   var removeButton = $('#input-remove');
   var sortButton = $('#input-sort');
   var numberListElem = $('#div-number-list');
 
-	var miliSecondsDelay = 1000;
+  var miliSecondsDelay = 1000;
 
-	/**
-	 * List Operations
-	 */
+  /**
+   * List Operations
+   */
 
-	function addNumber(number) {
+  function addNumber(number) {
     var index = numberList.indexOf(number);
     if (index === -1) {
       numberList.push(number);
@@ -32,8 +32,8 @@ var sortAnimation = (function () {
   }
 
   /**
-	 * Displaying Functions
-	 */
+   * Displaying Functions
+   */
 
   function listToStr(list) {
     var strList = list.toString();
@@ -63,8 +63,8 @@ var sortAnimation = (function () {
   }
 
   /**
-	 * Button Status Functions
-	 */
+   * Button Status Functions
+   */
 
   function disableButtons() {
     addButton.prop('disabled', true);
@@ -79,11 +79,11 @@ var sortAnimation = (function () {
   }
 
   /**
-	 * Sorting Algorithm:
-	 * I use the Quicksort sorting algorithm with the Lomuto's partition
-	 * algorithm, the pivot element is by default the last element.
-	 * This algorithm take O(n log n) in most cases.
-	 */
+   * Sorting Algorithm:
+   * I use the Quicksort sorting algorithm with the Lomuto's partition
+   * algorithm, the pivot element is by default the last element.
+   * This algorithm take O(n log n) in most cases.
+   */
 
   function sortNumberList() {
     disableButtons();
@@ -126,8 +126,8 @@ var sortAnimation = (function () {
   }
 
   /**
-	 * Field Validations
-	 */
+   * Field Validations
+   */
 
   function validateNumberField() {
     var numberValue = numberField.val();
@@ -146,8 +146,8 @@ var sortAnimation = (function () {
   }
 
   /**
-	 * Event Association Functions
-	 */
+   * Event Association Functions
+   */
 
   function associateAddEvent() {
     addButton.on('click', function () {
@@ -168,8 +168,8 @@ var sortAnimation = (function () {
   }
 
   /**
-	 * Initialization function
-	 */
+   * Initialization function
+   */
 
   function begin() {
     numberList.push(5);
@@ -179,7 +179,7 @@ var sortAnimation = (function () {
     numberList.push(8);
     numberList.push(2);
     numberList.push(6);
-		numberList.push(4);
+    numberList.push(4);
     displayNumberList();
   }
 
